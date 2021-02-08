@@ -56,10 +56,10 @@ void loop() {
   mqttClient.connect("daniloj");
 
   if(estadoSensorMag){
-    resposta = mqttClient.publish("lucasjorge-t", MENSAGEM_ABERTO);
+    resposta = mqttClient.publish("daniloj-t", MENSAGEM_ABERTO);
   }
   else{
-    resposta = mqttClient.publish("lucasjorge-t", MENSAGEM_FECHADO);
+    resposta = mqttClient.publish("daniloj-t", MENSAGEM_FECHADO);
   }
 
   if (resposta == 1)
