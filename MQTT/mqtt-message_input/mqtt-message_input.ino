@@ -28,7 +28,7 @@ void setup() {
     //Inicia o monitor Serial
     Serial.begin(9600);
 
-    mqttClient.setServer("54.174.235.157", 1883);
+    mqttClient.setServer("54.161.191.80", 1883);
 
     //Exibe no Monitor Serial as informações sobre o IP do Arduino
     Serial.print("O IP do Arduino e: ");
@@ -52,14 +52,13 @@ void setup() {
 void loop() {  
   estadoSensorMag = digitalRead(pinoSensorMag);
   
-  // Conecta o cliente como 'daniloj'
   mqttClient.connect("daniloj");
 
   if(estadoSensorMag){
-    resposta = mqttClient.publish("lucasjorge-t", MENSAGEM_ABERTO);
+    resposta = mqttClient.publish("daniloj-t", MENSAGEM_ABERTO);
   }
   else{
-    resposta = mqttClient.publish("lucasjorge-t", MENSAGEM_FECHADO);
+    resposta = mqttClient.publish("daniloj-t", MENSAGEM_FECHADO);
   }
 
   if (resposta == 1)
