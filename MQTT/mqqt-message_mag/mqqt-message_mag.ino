@@ -55,7 +55,7 @@ void loop() {
   // Conecta o cliente como 'daniloj'
   mqttClient.connect("daniloj");
 
-  if(estadoSensorMag){
+  if(estadoSensorMag == 1){
     resposta = mqttClient.publish("daniloj-t", MENSAGEM_ABERTO);
   }
   else{
