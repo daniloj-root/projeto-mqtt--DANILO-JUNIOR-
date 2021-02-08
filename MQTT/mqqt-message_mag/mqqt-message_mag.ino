@@ -13,7 +13,7 @@ bool resposta, estadoSensorMag;
 const int pinoSensorMag = 2;
 
 const char MENSAGEM_ABERTO[6] = "ABERTO";
-const char MENSAGEM_FECHADO[7] = "FECHADO";
+const char MENSAGEM_FECHADO[8] = "FECHADO";
 
 //Inicia o cliente Ethernet
 EthernetClient client;
@@ -54,9 +54,7 @@ void loop() {
   
   // Conecta o cliente como 'daniloj'
   mqttClient.connect("daniloj");
-
-  delay(100);
-    
+  
   if(estadoSensorMag == 1){
     resposta = mqttClient.publish("daniloj-t", MENSAGEM_ABERTO);
   }
