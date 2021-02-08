@@ -70,8 +70,6 @@ void loop() {
   {
     Serial.println("O servidor MQQT não recebeu a mensagem"); 
   }
-    
-  delay(1000);
   
   mqttClient.loop();
 }
